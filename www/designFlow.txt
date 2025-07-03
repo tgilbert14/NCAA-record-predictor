@@ -1,0 +1,39 @@
+Project Plans initial ideas...
+
+Step 1: Define the Data Structure
+Sketch a schema like:
+Team = {
+    "team_name": str,
+    "head_coach": str,
+    "coach_tenure": int,
+    "offensive_style": str,
+    "defensive_style": str,
+    "team_rating": float,
+    "recruiting_score": float,
+    "returning_production_pct": float,
+    "transfer_net_rating": float,
+    "schedule_strength": float,
+    "home_field_advantage": float,
+    "previous_season_wins": int,
+    "previous_season_losses": int,
+}
+
+
+Then map these features to their sources. For example:
+- offensive_style → scraped from CollegeFootballNetwork
+- recruiting_score → 247Sports composite ranking
+- transfer_net_rating → derived from On3 transfer tracker
+
+Step 2: Gather the Data
+Write Python scripts to fetch or parse key features. Start with:
+- Team Ratings + Schedules → EA Sports Rankings / CollegeFootballNews
+- Coaches + Schemes → scraping CFN or GamesRadar
+- Roster Strength → 247Sports + PFF + Transfer Portal stats
+
+Step 3: Build Feature Matrix + Target
+Once the data’s structured and cleaned:
+- Encode categorical features (like scheme types)
+- Normalize numerical features (recruiting scores, schedule difficulty)
+- Define target label: win count or win-loss ratio
+
+Starting with Arizona, Washington, Colorado, Alabama, and Kansas State rosters and go from there...
